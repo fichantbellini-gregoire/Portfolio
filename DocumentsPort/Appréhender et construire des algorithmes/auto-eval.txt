@@ -1,2 +1,0 @@
-travail a faire en binome, premiere optimisation d'un code en language c , je n'ai personnelement pas eu trop de probleme a realiser la 1ere partie qui était assez simple , mais nous avons eu beaucoup plus de difficulté pour la 2eme partie du au fait que de nombreuse fonctionalité assez dure a mettre en place  devait être implémenter , de plus le code devait optimiser. sinon globalement l'evaluation individuelle c'est plutot bien passé.
-
