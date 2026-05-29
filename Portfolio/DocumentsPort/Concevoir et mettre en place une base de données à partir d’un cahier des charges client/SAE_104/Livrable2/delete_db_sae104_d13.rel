@@ -1,0 +1,50 @@
+﻿DROP CONSTRAINT comprend_fk_formule_tarifaire;
+DROP CONSTRAINT comprend_fk_creneau;
+DROP CONSTRAINT tarif_kwh_fk_puissance;
+DROP CONSTRAINT tarif_kwh_fk_periode_conso;
+DROP CONSTRAINT tarif_kwh_fk_formule_tarifaire;
+DROP CONSTRAINT tarif_abonnement_fk_puissance;
+DROP CONSTRAINT tarif_abonnement_fk_formule_tarifaire;
+DROP CONSTRAINT souscrire_fk_formule_tarifaire;
+DROP CONSTRAINT souscrire_fk_date;
+DROP CONSTRAINT souscrire_fk_contrat;
+DROP CONSTRAINT releve_fk_date;
+DROP CONSTRAINT releve_fk_creneau_quotidien;
+DROP CONSTRAINT releve_fk_compteur;
+DROP CONSTRAINT proposer_fk_fournisseur;
+DROP CONSTRAINT proposer_fk_formule_tarifaire;
+DROP CONSTRAINT posseder_fk_compteur;
+DROP CONSTRAINT posseder_fk_client;
+DROP CONSTRAINT inclure_fk_periode_conso;
+DROP CONSTRAINT inclure_fk_formule_tarifaire;
+DROP CONSTRAINT formule_tarifaire_fk_fournisseur;
+DROP CONSTRAINT creneau_fk_periode_conso;
+DROP CONSTRAINT contrat_fk_compteur;
+DROP CONSTRAINT contrat_fk_client;
+DROP VAR CLIENT;
+DROP VAR COMPREND;
+DROP VAR COMPTEUR;
+DROP VAR CONTRAT;
+DROP VAR CRENEAU;
+DROP VAR CRENEAU_QUOTIDIEN;
+DROP VAR DATE;
+DROP VAR FORMULE_TARIFAIRE;
+DROP VAR FOURNISSEUR;
+DROP VAR INCLURE;
+DROP VAR PERIODE_CONSO;
+DROP VAR POSSEDER;
+DROP VAR PROPOSER;
+DROP VAR PUISSANCE;
+DROP VAR RELEVE;
+DROP VAR SOUSCRIRE;
+DROP VAR TARIF_ABONNEMENT;
+DROP VAR TARIF_KWH;
+DROP TYPE DCOMPTEUR;
+DROP TYPE DTIME;
+DROP TYPE DCP;
+DROP TYPE DDATE;
+DROP TYPE DNOFOUR;
+
+
+
+

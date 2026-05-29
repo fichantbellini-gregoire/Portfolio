@@ -1,0 +1,105 @@
+/* Partie Nav */
+
+nav a { 
+display: block; 
+width: 7em; border: 1px solid #466dd7;
+color: #000; background-color: darkblue; }
+
+nav a:hover { 
+color: #fff; background-color: #000; }
+
+nav li ul { 
+display: none; position: absolute; }
+
+nav li:hover > ul { 
+display: block; } 
+
+nav > ul { display: flex; gap: 0.5em; position: relative;;}
+
+nav li { list-style-type: none; 
+text-align: center;
+font-variant: small-caps; }
+
+nav a { 
+display: block; text-decoration: non
+}
+
+ul {
+    justify-content: space-between;
+}
+/* Partie Body */
+
+body {
+    background: linear-gradient(135deg, darkblue 20% , black 100%) ;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: white;
+}
+
+#bloc_page {
+    width: 900;
+    margin : auto
+}
+
+/* Partie Header */
+
+header {
+    display: flex;
+    flex-direction: column;
+    border : solid 5px;
+}
+
+
+
+#titre {
+    font-size: large;
+    padding: 10px;
+}
+
+header h1, h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+section {
+    margin: 5em;
+    padding: 2em;
+    border: solid 5px;
+    border-radius: 2em;
+    display: block;
+}
+
+section:first-child{
+    display : block;
+}
+
+section:first-child article{
+    display : flex;
+    padding: 2em;
+}
+
+section:first-child article p{
+    order : 1;
+    padding-left: 5em;
+}
+
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+section:nth-child(2) article {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+a, a:visited, a:hover, address > a{
+    color : white;
+}
+
+
