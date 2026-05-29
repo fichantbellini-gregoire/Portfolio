@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+
+<head>
+    <title>Portofolio</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Fichant--Bellini Grégoire">
+    <link rel="stylesheet" type="text/css" href="">
+</head>
+
+<body>
+    <div id="bloc_page">
+<header>
+    <div id="titre">
+        <h1>Appréhender et construire des algorithmes</h1>
+    </div>
+    <nav>
+    <ul>
+        <li><a href="#Proj">Projet </a></li>
+            <ul>
+                <li><a href="#Presentation">Présentation</a></li>
+                <li><a href="#Deroul">Déroulé</a></li>
+            </ul>
+        <li><a href="#Bilan">Bilan du projet</a></li>
+        <li><a href="main.html">Page d'Acceuil</a></li>
+    </ul>
+    </nav>
+</header>
+
+    <main>
+
+        <section>
+            <h2 id="Proj">Projet</h2>
+            <h3 id="Presentation">Présentation du projet</h3>
+                <p> Ce projet était dans le cadre d'une Situation d'apprentisage et d'évaluation (SAE) dont le but est d'acquérir la capacité
+                de pouvoir proposer des applications informatiques optimisées en fonction de critères spécifiques comme le temps d’exécution, la précision
+                ou encore la consommation de ressources.
+                Plus concrètement, l'objectif de ce projet est qu'en partant d'un besoin exprimé par un client, de réaliser une implémentation de différentes approches 
+                de résolution puis de les comparer en effectuants des mesures de performances simples.<br>
+                Cette compétence permet de découvrir l'importance des critères de performances dans le cadre du développement d'une application.
+                <br>
+                Le projet consistait à programmer une automatisation du jeu du Sokoban (cf <a href="comp1.html">Compétence 1</a> ) à partir d'une liste de déplacement puis
+                d'arriver à optimiser le nombre de déplacements du personnage en respectant des indicateurs de performances précis (le temps et l'utilisation de ressources).
+                POur se faire, on a dû le programmer en C.
+                </p>
+                <img src="Imagees/comp2.webp">
+            <h3 id="Deroul">Déroulé du projet</h3>
+                <p>Dans la première version, je devais programmer le Sokoban autonome en language C et donc mon programme devait :<br>
+                    <ol>
+                        <li>Demander à l’utilisateur le nom d’une partie (fichier .sok)</li>
+                        <li>Demander à l’utilisateur le nom d’une suite de déplacements (fichier .dep)</li>
+                        <li>"Faire jouer" la partie : chaque déplacement doit être visible à l’écran et une pause entre les
+                        déplacements doit être prévue, suffisamment longue pour pouvoir suivre facilement le
+                        déroulement</li>
+                        <li>Afficher le bilan</li>
+                    </ol>
+                    Puis, dans la deuxième version, en reprenant ma première version, mon programme devait maintenant capable de retirer les séquences inutiles dans les fichiers de déplacements
+                    dans le but d'optimiser la résolution du niveau par notre personnage. Cependant, cette optimisation devait permettre de résoudre chaque niveau en moins de 5 secondes.
+                </p>
+        </section>
+
+        <section>
+            <h2 id="Bilan">Bilan du projet</h2>
+            <p>Si je devais faire le bilan de ce projet, je dirais qu'il m'a permis de consolider mes bases dans le language C mais surtout qu'il m'a appris 
+                l'importance des choix de mes algorithmes dans le résolution d'un problème donné. Cependant, je considère ce projet comme raté car la principale fonction qui était l'optimisation ne fonctionne pas du tout.<br>
+                Je pense ainsi qu'il faut que je revois le principe de l'optimisation car je pense ne pas avoir réelemment compris ce concept et que je m'entraine d'avantage sur des algorithmes similaires.
+                Je considère cette compétence comme non validé.
+            </p>
+        </section>         
+    </main>
+</body>
+</html>
