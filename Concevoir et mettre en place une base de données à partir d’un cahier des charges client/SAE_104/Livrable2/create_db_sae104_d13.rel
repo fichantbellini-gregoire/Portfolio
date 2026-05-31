@@ -1,0 +1,195 @@
+﻿TYPE DCP POSSREP{
+CP CHAR CONSTRAINT
+LENGTH (CP) <= 5};
+
+VAR CLIENT REAL RELATION{
+id_client INT,
+nom_cli CHAR,
+prenom_cli CHAR,
+adresse_cli1 CHAR,
+adresse_cli2 CHAR,
+adresse_cli3 CHAR,
+code_postal_cli DCP,
+ville_cli CHAR,
+telephone_cli CHAR,
+mail_cli CHAR}
+KEY {id_client};
+
+
+TYPE DCOMPTEUR POSSREP{
+PDL CHAR CONSTRAINT
+LENGTH (PDL) <= 14};
+
+TYPE DDATE POSSREP{
+DATE CHAR CONSTRAINT
+LENGTH (DATE) <= 10};
+
+VAR COMPTEUR REAL RELATION{
+pdl_prm DCOMPTEUR,
+adresse1 CHAR,
+adresse2 CHAR,
+adresse3 CHAR,
+code_postal DCP,
+ville CHAR,
+date_hiver_ete DDATE,
+date_ete_hiver DDATE}
+KEY {pdl_prm};
+
+VAR CONTRAT REAL RELATION{
+no_contrat CHAR,
+date_debut_contrat DDATE,
+id_client INT,
+pdl_prm DCOMPTEUR}
+KEY{no_contrat} ;
+
+CONSTRAINT contrat_fk_client
+CONTRAT{id_client} <= CLIENT{id_client};
+
+CONSTRAINT contrat_fk_compteur
+CONTRAT{pdl_prm} <= COMPTEUR{pdl_prm};
+
+VAR POSSEDER REAL RELATION{
+id_client INT,
+pdl_prm DCOMPTEUR}
+KEY{id_client, pdl_prm};
+
+CONSTRAINT posseder_fk_client
+POSSEDER{id_client} <= CLIENT{id_client};
+
+CONSTRAINT posseder_fk_compteur
+POSSEDER{pdl_prm} <= COMPTEUR{pdl_prm};
+
+TYPE DNOFOUR POSSREP{
+NOFOUR CHAR CONSTRAINT LENGTH (NOFOUR) <= 5};
+
+VAR  FOURNISSEUR REAL RELATION{
+id_fournisseur DNOFOUR,
+libelle_fournisseur CHAR,
+telephone_fournisseur CHAR,
+mail_fournisseur CHAR}
+KEY {id_fournisseur};
+VAR FORMULE_TARIFAIRE REAL RELATION{
+id_formule INT,
+lib_formule CHAR,
+descriptif_formule CHAR,
+date_commercialisation DDATE,
+id_fournisseur DNOFOUR}
+KEY {id_formule};
+CONSTRAINT formule_tarifaire_fk_fournisseur
+FORMULE_TARIFAIRE{id_fournisseur} <= FOURNISSEUR{id_fournisseur};
+VAR PROPOSER REAL RELATION{
+id_formule INT,
+id_fournisseur DNOFOUR}
+KEY {id_formule, id_fournisseur};
+CONSTRAINT proposer_fk_fournisseur
+PROPOSER{id_fournisseur} <= FOURNISSEUR{id_fournisseur};
+CONSTRAINT proposer_fk_formule_tarifaire
+PROPOSER{id_formule} <= FORMULE_TARIFAIRE{id_formule};
+
+VAR PUISSANCE REAL RELATION{
+val_puissance INT}
+KEY{val_puissance};
+ 
+VAR TARIF_ABONNEMENT REAL RELATION{
+id_formule INT,
+val_puissance INT,
+prix_abo_ht RATIONAL,
+prix_abo_ttc RATIONAL}
+KEY{id_formule, val_puissance};
+ 
+CONSTRAINT tarif_abonnement_fk_puissance
+TARIF_ABONNEMENT{val_puissance} <= PUISSANCE{val_puissance};
+CONSTRAINT tarif_abonnement_fk_formule_tarifaire
+TARIF_ABONNEMENT{id_formule} <= FORMULE_TARIFAIRE{id_formule};
+
+VAR PERIODE_CONSO REAL RELATION{
+id_periode_conso CHAR,
+lib_periode_conso CHAR}
+KEY{id_periode_conso};
+ 
+TYPE DTIME POSSREP{
+TIME CHAR CONSTRAINT
+LENGTH (TIME) <= 5};
+
+VAR CRENEAU REAL RELATION{
+no_creneau_hebdo INT,
+jour_hebdo CHAR,
+heure_debut DTIME,
+heure_fin DTIME,
+id_periode_conso CHAR}
+KEY{no_creneau_hebdo};
+ 
+CONSTRAINT creneau_fk_periode_conso
+CRENEAU{id_periode_conso} <= PERIODE_CONSO{id_periode_conso};
+
+VAR TARIF_KWH REAL RELATION{
+val_puissance INT,
+id_periode_conso CHAR,
+id_formule INT,
+prix_kWh_ht RATIONAL,
+prix_kWh_ttc RATIONAL}
+KEY{val_puissance, id_periode_conso, id_formule};
+
+VAR DATE REAL RELATION{
+date DDATE}
+KEY{date};
+
+VAR CRENEAU_QUOTIDIEN REAL RELATION{
+heure DTIME}
+KEY{heure};
+
+VAR RELEVE REAL RELATION{
+pdl_prm DCOMPTEUR,
+date DDATE,
+heure DTIME,
+conso_kwh RATIONAL}
+KEY{pdl_prm, date, heure};
+
+VAR COMPREND REAL RELATION{
+id_formule INT,
+no_creneau_hebdo INT}
+KEY{id_formule, no_creneau_hebdo};
+
+CONSTRAINT releve_fk_compteur
+RELEVE{pdl_prm} <= COMPTEUR{pdl_prm};
+
+CONSTRAINT releve_fk_date
+RELEVE{date} <= DATE{date};
+
+CONSTRAINT releve_fk_creneau_quotidien
+RELEVE{heure} <= CRENEAU_QUOTIDIEN{heure};
+
+CONSTRAINT comprend_fk_formule_tarifaire
+COMPREND{id_formule} <= FORMULE_TARIFAIRE{id_formule};
+
+CONSTRAINT comprend_fk_creneau
+COMPREND{no_creneau_hebdo} <= CRENEAU{no_creneau_hebdo};
+VAR INCLURE REAL RELATION{
+id_formule INT,
+id_periode_conso CHAR}
+KEY{id_formule, id_periode_conso};
+
+CONSTRAINT inclure_fk_formule_tarifaire
+INCLURE{id_formule} <= FORMULE_TARIFAIRE{id_formule};
+
+CONSTRAINT inclure_fk_periode_conso
+INCLURE{id_periode_conso} <= PERIODE_CONSO{id_periode_conso};
+
+VAR SOUSCRIRE REAL RELATION{
+no_contrat CHAR,
+date DDATE,
+id_formule INT}
+KEY{no_contrat, date, id_formule};
+CONSTRAINT souscrire_fk_contrat
+SOUSCRIRE{no_contrat} <= CONTRAT{no_contrat};
+CONSTRAINT souscrire_fk_date
+SOUSCRIRE{date} <= DATE{date};
+
+CONSTRAINT souscrire_fk_formule_tarifaire
+SOUSCRIRE{id_formule} <= FORMULE_TARIFAIRE{id_formule};
+CONSTRAINT tarif_kwh_fk_puissance
+TARIF_KWH{val_puissance} <= PUISSANCE{val_puissance};
+CONSTRAINT tarif_kwh_fk_formule_tarifaire
+TARIF_KWH{id_formule} <= FORMULE_TARIFAIRE{id_formule};
+CONSTRAINT tarif_kwh_fk_periode_conso
+TARIF_KWH{id_periode_conso} <= PERIODE_CONSO{id_periode_conso};
