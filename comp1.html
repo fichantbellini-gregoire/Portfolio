@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+
+<head>
+    <title>Portofolio</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Fichant--Bellini Grégoire">
+    <link rel="stylesheet" type="text/css" href="Comp.css">
+</head>
+
+<body>
+    <div id="bloc_page">
+<header id="fondTitreComp1">
+    <div id="titre">
+        <h1>Développer des applications informatiques simples</h1>
+    </div>
+
+    <nav>
+    <ul>
+        <li><a href="index.html">Page d'acceuil</a></li>
+        <li><a href="#Proj">Projet</a>
+            <ul>
+                <li><a href="#Presentation">Présentation</a></li>
+                <li><a href="#Deroul">Déroulé</a></li>
+            </ul>
+        </li>
+        <li><a href="#Bilan">Bilan</a></li>
+    </ul>
+    </nav>
+</header>
+
+    <main>
+
+        <section>
+            <h2 id="Proj">Projet</h2>
+            <h3 id="Presentation">Présentation du projet</h3>
+            <article>
+                <p>
+                    Ce projet était dans le cadre d'une'Situation d'apprentisage et d'évaluation (SAE) dont le but est d'acquérir la capacité de développer — c’est-à-dire concevoir, coder, tester et intégrer — une solution informatique pour un client.
+                    Plus concrètement, en partant d’un besoin exprimé par un client, l’objectif est de réaliser une application qui réponde à ce besoin.
+                    Cette compétence permet ainsi d'appréhender les débuts du développement d'application.<br>
+                    Le projet consistait ainsi à développer notre propre jeu du Sokoban, qui devait être jouable sur le Terminal et non graphique.<br>
+                    Si vous ne connaisez pas le principe du Sokoban, le joueur contrôle un employé d'entrepôt qui doit pousser des caisses vers des points précis d'un niveau pour le compléter.
+                    On devais le programmer en C.
+                </p>
+                    <img src="Imagees/Sokoban_ani.gif" width="250" height="250">
+                    <figcaption>Voici un exemple de gameplay du jeu du Sokoban</figcaption>
+            </article>
+            <h3 id="Deroul">Déroulé du projet</h3>
+                <p>
+                    Dans une première version, j'ai du réaliser les fonctionnalités demandées dans le cahier des charges. Dans cette
+                    version, mon programme devait, dans cet ordre :
+                    <ol>
+                        <li>Demander à l’utilisateur de saisir le nom d’un fichier .sok</li><br>
+                        <li>"Charger" une partie en exploitant le fichier dont le nom a été saisi par l’utilisateur</li><br>
+                        <li>Afficher le plateau de jeu, précédé d’un entête d’informations</li><br>
+                        <li>Gérer les déplacements de l’utilisateur jusqu’à la victoire ou l’abandon de la partie. Après
+                        chaque déplacement le plateau devait être modifié puis réaffiché avec son entête. L’utilisateur avait
+                        aussi la possibilité de recommencer la partie depuis le début</li><br>
+                        <li>A la fin de la partie, indiquer si la partie avait été gagnée ou si elle avait été
+                        abandonnée. S’il y avait eu abandon, le programme proposait à l’utilisateur de sauvegarder la
+                        partie dans l’état où elle se trouvait au moment de l’abandon. Si l’utilisateur acceptait, le programme devait enregistrer la partie dans un fichier
+                        .sok dont le nom avait été saisi au clavier</li>
+                    </ol><br>
+                    Pour ce faire, j'avais l'obligation d'utiliser le language C, un language que je ne connaissais pas.
+
+                    Voici le résultat que j'ai produit pour la première version : <a href="sokoban_version1.c" download=""> Code disponible</a> <br>
+                    </p>
+                    <img src="Imagees/sokobanver1.png">
+                    <figcaption>Résultat version 1</figcaption>
+                    <p>
+                        Dans une deuxième version, en plus des fonctionnalités de la première, elle aller incorporer de nouvelles mécaniques. Elle devait en plus : <br>
+                        <ol>
+                            <li>Proposer la possbilité de zoomer (touche ‘+’) ou de dézoomer (touche ‘-’)</li>
+                            <li>Mémoriser la suite des déplacements effectués</li>
+                            <li>Proposer d’annuler le dernier déplacement (touche ‘u’ pour undo)</li>
+                            <li>Proposer de sauvegarder la suite des déplacements effectués quand la partie est terminée par
+                            abandon ou par victoire</li>
+                        </ol><br>
+                        Voici le résultat que j'ai produit pour cette seconde version : <a href="sokoban_version2.c" download="">Code Version 2</a> <br>
+                    </p>
+                    <img src="Imagees/sokobanver2.png">
+                    <figcaption>Résultat version 2</figcaption>
+        </section>
+
+        <section>
+            <h2 id="Bilan">Bilan du projet</h2>
+            <p>
+                En termes de compétences techniques, ce projet m'a permit d'obtenir des bases en C. Grâce à lui, j'ai programmé ma première petite application.
+
+                Sinon, il m'a fait aussi acquérir de nouvelles compétences personnelles comme notamment la rigueur pour pouvoir respecter parfaitement le cahier des charges.<br>
+                J'ai tout de même connu quelques difficultées, notamment au début avec le C car je n'en avais jamais manipulé avant.
+                Certaines fonctionnalités m'ont posé aussi des problèmes, notamment le déplacement du personnage qui fût la fonctionnalité la plus difficile à mettre pour moi.
+                
+                Si je devais analyser ce projet, je le considère comme assez réussi et je considère avoir validé cette compétence.
+            </p>
+        </section>         
+    </main>
+</body>
+</html>

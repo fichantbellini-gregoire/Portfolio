@@ -1,0 +1,317 @@
+@font-face {
+font-family: "maPolice";
+src: url("Police/JainiPurva-Regular.ttf") ;
+font-weight: normal;
+font-style: normal;
+}
+
+body{
+    background-color: #E3DFCB;
+    display: block;
+    font-size: 1em;
+}
+
+.top{
+    background-color: #962A37;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.bottom{
+    background-color: #2F8141;
+}
+
+.top img{
+    width: 10vw;
+    align-items: center;
+}
+.top figure{
+    align-items: center;
+}
+
+header ul, footer ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 1.25em;
+}
+
+header li a{
+    background-color: #E3DFCB;
+    list-style: none;
+    border-radius: 1em;
+    color: black;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    transition: all .5s .1s;
+    align-items: center;
+}
+
+header a:hover{
+    background-color: #962A37;
+    color: white;
+}
+
+main{
+    display: flex;
+    background-color: #E3DFCB;
+}
+
+main img{
+    height: 400px;
+}
+
+
+.menuDeroulant{
+    text-align: left;
+    background-color: #962A37;
+    width: 200px;
+    margin: 0;
+    position: sticky;
+    width: 250px;
+    height: 100vh;
+    top: 0;
+    padding: 10px;
+    gap: 80px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.menuDeroulant ul{
+    list-style: none;
+}
+
+.menuDeroulant > ul{
+    list-style: decimal-leading-zero;
+    color: white;
+}
+
+.menuDeroulant a:hover{
+    color: black;
+    background-color: #E3DFCB;
+    transition: all .5s ease .1s;
+}
+
+section{
+    margin: 20px;
+    text-align: center;
+
+}
+
+article{
+    display: flex;
+    margin-top: 30px;
+    margin: 5px;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+article > div{
+    display: flex;
+    flex-direction: row;
+}
+
+aside{
+    background-color: #962A37;
+    color: #E3DFCB;
+    border-radius: 10px;
+    border-width: 3px;
+    border-color: white;
+    border-style: dashed;
+    padding: 1em;
+    margin: 1em;
+}
+
+div{
+    text-align: center;
+}
+
+#particularites + article{
+    flex-direction: row;
+}
+#particularites + article > div {
+    flex-direction: column;
+    align-content: flex-start;
+}
+#particularites + article > div > div {
+    display: flex;
+    flex-direction: row;
+}
+#particularites + article img{
+    height: 200px;
+}
+
+footer ul{
+    display: flex;
+    flex-direction: column;
+}
+
+footer ul li{
+    line-height: 3em;
+}
+
+article figure img{
+    border-radius: 22px;
+    border: solid;
+    border-width: 5px;
+}
+
+.joliDiv{
+    display: flex;
+    flex-direction: column;
+    
+    background-color: #962A37;
+    padding: 2em;
+    border-radius: 20px;
+    color: white;  
+    margin: 1em;
+    flex-basis: 20em;
+    flex-grow: 1;
+    flex-shrink: 0;
+    
+}
+
+h2, details summary{
+    text-align: left;
+}
+.titre{
+    text-align: center;
+}
+.titre:hover{
+    animation: espace 1s ease forwards;
+}
+
+@keyframes espace{
+    0%{letter-spacing: 0;}
+    60%{letter-spacing: 8px;}
+    100%{letter-spacing: 5px;}
+}
+
+.menuDeroulant a{
+    color: white;
+}
+
+details summary{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+h1 {
+font-family: 'maPolice', arial, sans-serif;
+font-size: 3em;
+}
+
+h3{
+    font-family: 'maPolice', arial, sans-serif;
+    font-size: 1.5em;
+}
+
+h4{
+    font-size: 2em;
+}
+
+.titre{
+    font-family: 'maPolice', arial, sans-serif;
+    font-size: 2em;
+}
+
+details summary{
+    margin: 50px;
+}
+
+article figure img {
+    border-radius: 22px;
+    border: 5px solid black;
+    display: block;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: #D9D9D9;
+    padding: 30px;
+}
+
+p{
+    line-height: 40px;
+}
+
+.zoomBox{
+    transition: transform 0.25s ease-in-out ;
+}
+.zoomBox:hover{
+    transform: scale(1.05);
+}
+
+.onBox{
+    transition: all 0.25s;  
+}
+.onBox:hover{
+    transform: translate(10px,10px);
+    box-shadow: -10px -10px 3px #e88787 inset, -10px -10px 3px #22191A;
+    border-top: #2F8141;
+    border-left: #2F8141;
+}
+
+h4 + div {
+    display: flex;
+    flex-direction: row;
+}
+
+dt{
+    text-indent: 20px;
+    border-left-style: solid ;
+    border-left-width: 4px;
+    border-bottom-style: solid ;
+    border-bottom-width: 4px;
+    margin: 20px 70% 0 0;
+}
+
+dl > h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+p > a:visited {
+    color: white;
+}
+
+mark {
+    background-color: white;
+}
+
+details summary{
+    margin: 70px;
+    font-size: 1.5em;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+details summary img{
+    transition: all .3s;
+    width: 2em;
+    height: 2em;
+}
+
+details[open=""] summary img{
+    transform: rotate(90deg);
+}
+
+article figure img {
+    border-radius: 22px;
+    border: 5px solid black;
+    display: block;
+    transition: transform 0.4s ease-in-out; 
+}
